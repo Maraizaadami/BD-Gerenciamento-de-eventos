@@ -1,0 +1,27 @@
+/*************************************************************************/
+/** ACH2025 - Banco de Dados 1 e 2 					**/
+/** Luciano Vieira de Araújo e Sarajane Marques Peres			**/
+/** EACH-USP - Primeiro Semestre de 2020                            	**/
+/**              Exercicio-Programa                                    	**/
+/**                                                                	**/
+/** Grupo 							   	**/
+/** Bernardo Chagas							**/
+/** Tamires Serafim Sant Ana 						**/
+/** Maraiza Adami Pereira 						**/
+/** 		                             				**/
+/**                                                                     **/
+/*************************************************************************/
+
+Tema : Gerenciador de eventos Acadêmicos/científicos
+Uma aplicação de gerenciamento de eventos acadêmicos, dando suporte a diversas atividades :
+● gerenciamento das atividades e programação ( palestras, workshops,
+tutoriais, reuniões de comissões especiais, apresentação de artigos);
+● controle de inscrições;
+● emissão de certificados;
+● sistema de recursos humanos;
+● sistema de patrocínios/exposição;
+● sistema contábil;
+● gestão de espaço;
+● sistema de gerenciamento das redes sociais e marketing;
+● sistema de varejo (venda de produtos);
+● sistema de gerenciamento de caravanas.

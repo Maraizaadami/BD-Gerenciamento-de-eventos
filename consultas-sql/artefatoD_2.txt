@@ -1,0 +1,11 @@
+-- Selecione o CPF de todos os Staff de eventos que 
+-- registraram mais de uma ocorrência e identifique o evento.
+-- join
+
+
+SELECT cpf, id, nome, COUNT(*) 
+FROM Staff
+JOIN Ocorrencia ON staff.id = ocorrencia.id_staff
+JOIN Evento ON evento.id=ocorrencia.id_evento
+GROUP BY staff.cpf, evento.id
+HAVING COUNT(*) > 1;

@@ -1,0 +1,11 @@
+
+--Criação de visão- com restrição de segurança (requisito não funcional)- para controle de recuperação de dados dos participantes, visando proporcione segurança de acesso às informações-: Lista de participante contendo informaçoes da tabela participantes ( nome, cpf, email) , incluir numero_de_ingresso da tabela Inscrição e ID e nome das atividades- tabela atividades - que ele participou . E caso participante ser inscrito como ouvinte retirar permissão para visualizar dados da lista de participantes . Assim a visão envolve 3 tabelas, negando a definiços de visao para usuario
+
+Create view ListaDeParticipante as
+Select Participante.Nome_Completo,Participante.CPF, Participante.Email, Inscricao.Numero_de_ingresso, Atividade.Nome
+from Participante,Pertence_a, Inscricao, Participa_De, Assiste,Atividade, assiste  
+DENY View DEFINITION On Participante To Ouvinte;
+
+
+
+

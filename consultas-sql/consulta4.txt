@@ -1,0 +1,14 @@
+-- Selecione o CPF de todos os Staff de eventos que 
+-- registraram mais de uma ocorrência e identifique o evento.
+-- Inner join
+
+SELECT staff.CPF, Evento.id, Evento.nome
+FROM (( Evento
+INNER JOIN Staff ON staff.CPF=Evento.staff
+INNER JOIN Ocorrencia ON Ocorrencia.Oco_Id=Evento.id)
+
+SELECT Staff.cpf, Evento.id, Evento.nome, COUNT(*) FROM Staff 
+INNER JOIN Ocorrencia ON Staff.cpf=Ocorrencia.id_staff
+INNER JOIN Evento e ON Evento.id=Ocorrencia.id_evento
+GROUP BY staff.cpf, Evento.id
+HAVING COUNT(*) > 1;

@@ -1,0 +1,14 @@
+-- Selecione o CPF de todos os Staff de eventos que 
+-- registraram mais de uma ocorrência e identifique o evento.
+--Usando Unions
+
+SELECT cpf COUNT(*) 
+FROM Staff, Ocorrencia
+WHERE Staff.id = ocorrencia.id_staff
+union
+SELECT id, nome
+FROM Evento , Ocorrência
+WHERE Evento.id = ocorrencia.id
+GROUP BY staff.cpf, evento.id
+HAVING COUNT(*) > 1;
+

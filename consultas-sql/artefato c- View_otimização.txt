@@ -1,0 +1,8 @@
+-- Criação de Visão para consulta dos dados de uma ocorrência, contendo os dados presentes na tabela Ocorrencia (descrição, providencias) juntamente com os dados do Evento correspondente (id, nome, data_inicio,  data_fim) e do staff que a registrou (cpf, nome)
+
+Create view OcorrenciaRegistrada as
+Select o.id, o.descricao, o.providencias, e.id, e.nome, e.data_inicio,    e.data_fim, s.cpf, s.nome
+from Ocorrencia o 
+inner join Evento e on e.id = o.id_evento
+inner join Staff s on s.cpf = o.id_staff
+

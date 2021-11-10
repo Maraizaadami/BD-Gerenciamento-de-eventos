@@ -1,0 +1,24 @@
+/*A asserção restricao_data_evento lida especificamente com o caso de um participante que está inscrito em um evento e quer se inscrever em outro evento que se iniciará no dia do fim desse primeiro evento inscrito.
+*/
+
+CREATE ASSERTION restricao_data_evento CHECK
+	(NOT EXISTS (SELECT * 
+		FROM Evento F, Evento I,  Inscricao O, Participa_De P	
+		WHERE	F.Data_Fim = I.Data_Inicio AND
+					F.CPF = P.CPF AND
+					I.CPF = O.CPF));
+
+/* Restrição horario - participante não poder se inscrever em duas atividades que ocorram ao mesmo tempo.*/
+
+CREATE ASSERTION restricao_horario CHECK
+	(NOT EXISTS (SELECT *
+		FROM Atividade A, Atividade B, Participa_De P, Participa_De Q
+		WHERE	P.CPF = Q.CPF AND
+				(P.ID = A.ID AND
+				Q.ID = B.ID) OR
+				(P.ID = B.ID AND
+				P.ID = A.ID)
+				A.Hora_Atividade = B.Hora_Atividade));
+
+
+
